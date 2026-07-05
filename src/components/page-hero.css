@@ -1,0 +1,17 @@
+.page-hero {
+  padding-block: var(--space-2xl) var(--space-xl);
+}
+
+.page-hero-title {
+  font-size: var(--type-giant);
+  font-weight: 700;
+  text-wrap: balance;
+  margin-block: var(--space-sm) var(--space-md);
+  max-width: 18ch;
+}
+
+.page-hero-subtitle {
+  max-width: 42rem;
+  font-size: var(--type-md);
+  color: var(--color-fg-muted);
+}
