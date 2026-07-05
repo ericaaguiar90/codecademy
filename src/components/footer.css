@@ -21,9 +21,10 @@
 }
 
 .footer-logo-accent {
-  color: var(--color-bg);
-  background: var(--color-accent);
-  padding-inline: 0.35em;
+  color: var(--color-accent-fg);
+  background: var(--gradient-brand);
+  border-radius: 999px;
+  padding-inline: 0.5em;
   margin-inline-start: 0.3em;
 }
 

@@ -18,6 +18,20 @@ body {
   font-size: var(--type-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(45rem 32rem at 12% -8%, rgba(139, 92, 246, 0.35), transparent 60%),
+    radial-gradient(38rem 30rem at 88% 12%, rgba(236, 72, 153, 0.28), transparent 60%),
+    radial-gradient(42rem 34rem at 20% 92%, rgba(205, 255, 63, 0.14), transparent 60%),
+    radial-gradient(30rem 26rem at 96% 96%, rgba(139, 92, 246, 0.22), transparent 60%);
 }
 
 img,
@@ -130,7 +144,7 @@ ul {
   gap: var(--space-2xs);
   min-height: 48px;
   padding: 0.9rem 1.75rem;
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   border: var(--border-width) solid var(--color-fg);
   background: var(--color-fg);
   color: var(--color-bg);
@@ -143,6 +157,7 @@ ul {
   transition:
     transform var(--duration-base) var(--ease-out),
     background var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
     color var(--duration-base) var(--ease-out),
     border-color var(--duration-base) var(--ease-out);
 }
@@ -156,19 +171,28 @@ ul {
 }
 
 .btn-accent {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--gradient-brand);
+  border-color: transparent;
   color: var(--color-accent-fg);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35);
+}
+
+.btn-accent:hover {
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
 }
 
 .btn-outline {
-  background: transparent;
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
   color: var(--color-fg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
 }
 
 .btn-outline:hover {
-  background: var(--color-fg);
-  color: var(--color-bg);
+  background: var(--glass-bg-strong);
+  border-color: var(--color-fg);
+  color: var(--color-fg);
 }
 
 /* Reduced motion: kill decorative animation, keep instant state changes */

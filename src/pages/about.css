@@ -13,9 +13,18 @@
 
 .value-card {
   padding: var(--space-lg);
-  border: var(--border-width) solid var(--color-fg);
+  border: var(--border-width) solid var(--glass-border);
   border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
   height: 100%;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
 }
 
 .value-title {

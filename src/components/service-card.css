@@ -4,18 +4,23 @@
   flex-direction: column;
   gap: var(--space-sm);
   padding: var(--space-lg);
-  border: var(--border-width) solid var(--color-fg);
+  border: var(--border-width) solid var(--glass-border);
   border-radius: var(--radius-md);
-  background: var(--color-bg);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
   transition:
     transform var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out);
+    box-shadow var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
   height: 100%;
 }
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 8px 8px 0 var(--color-accent);
+  border-color: rgba(236, 72, 153, 0.4);
+  box-shadow: var(--glass-shadow), 0 0 32px rgba(139, 92, 246, 0.25);
 }
 
 .service-card-index {

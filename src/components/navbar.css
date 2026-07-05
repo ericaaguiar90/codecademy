@@ -2,9 +2,10 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: var(--border-width) solid var(--color-fg);
+  background: rgba(9, 7, 15, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: var(--border-width) solid var(--glass-border);
 }
 
 .navbar-inner {
@@ -26,9 +27,10 @@
 }
 
 .navbar-logo-accent {
-  color: var(--color-bg);
-  background: var(--color-accent);
-  padding-inline: 0.35em;
+  color: var(--color-accent-fg);
+  background: var(--gradient-brand);
+  border-radius: 999px;
+  padding-inline: 0.5em;
   margin-inline-start: 0.3em;
 }
 
@@ -79,8 +81,10 @@
   gap: 5px;
   width: 44px;
   height: 44px;
-  border: var(--border-width) solid var(--color-fg);
-  background: var(--color-bg);
+  border: var(--border-width) solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border-radius: var(--radius-sm);
   cursor: pointer;
   flex-shrink: 0;
@@ -109,7 +113,9 @@
 .navbar-mobile {
   position: fixed;
   inset: 65px 0 0 0;
-  background: var(--color-bg);
+  background: rgba(9, 7, 15, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

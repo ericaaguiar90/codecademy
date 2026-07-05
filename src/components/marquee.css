@@ -1,13 +1,10 @@
 .marquee {
   overflow: hidden;
-  border-block: var(--border-width) solid var(--color-fg);
-  background: var(--color-bg);
+  border-block: var(--border-width) solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   padding-block: var(--space-md);
-}
-
-.marquee-dark {
-  border-color: var(--color-border);
-  background: var(--color-bg);
 }
 
 .marquee-track {

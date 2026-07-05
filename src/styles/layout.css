@@ -55,8 +55,16 @@
 }
 
 .cta-band {
-  background: var(--color-accent);
+  background: var(--gradient-brand);
   color: var(--color-accent-fg);
+  border-radius: var(--radius-lg);
+  margin-inline: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .cta-band {
+    margin-inline: var(--space-xl);
+  }
 }
 
 .cta-band-inner {

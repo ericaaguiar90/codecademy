@@ -1,9 +1,12 @@
 .testimonial-card {
   margin: 0;
   padding: var(--space-lg);
-  border: var(--border-width) solid var(--color-border);
+  border: var(--border-width) solid var(--glass-border);
   border-radius: var(--radius-md);
-  background: #131313;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
   height: 100%;
   display: flex;
   flex-direction: column;

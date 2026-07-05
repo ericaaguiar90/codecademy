@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 export default function App() {
   return (
     <>
+      <div className="bg-mesh" aria-hidden="true" />
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>

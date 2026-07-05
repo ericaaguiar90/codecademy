@@ -28,7 +28,10 @@
 }
 
 .hero-word-accent {
-  color: var(--color-accent);
+  background: var(--gradient-brand);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .hero-subtitle {

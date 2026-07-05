@@ -1,15 +1,19 @@
 .work-card {
   display: flex;
   flex-direction: column;
-  border: var(--border-width) solid var(--color-fg);
+  border: var(--border-width) solid var(--glass-border);
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: var(--color-bg);
-  transition: transform var(--duration-base) var(--ease-out);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
 }
 
 .work-card:hover {
   transform: translateY(-6px);
+  box-shadow: var(--glass-shadow), 0 0 32px rgba(236, 72, 153, 0.25);
 }
 
 .work-card-visual {
