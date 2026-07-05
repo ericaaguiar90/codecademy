@@ -1,8 +1,9 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
+import { useMagnetic } from "../hooks/useMagnetic";
 import "./hero.css";
 
 const HEADLINE = ["Brands", "that", "command", "attention."];
@@ -10,6 +11,20 @@ const HEADLINE = ["Brands", "that", "command", "attention."];
 export default function Hero() {
   const ref = useRef(null);
   const reducedMotion = usePrefersReducedMotion();
+  const primaryCtaRef = useMagnetic(0.25);
+  const secondaryCtaRef = useMagnetic(0.25);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    function handleMove(event) {
+      const rect = el.getBoundingClientRect();
+      el.style.setProperty("--glow-x", `${event.clientX - rect.left}px`);
+      el.style.setProperty("--glow-y", `${event.clientY - rect.top}px`);
+    }
+    el.addEventListener("mousemove", handleMove);
+    return () => el.removeEventListener("mousemove", handleMove);
+  }, []);
 
   useGSAP(
     () => {
@@ -53,10 +68,10 @@ export default function Hero() {
           Built to perform.
         </p>
         <div className="hero-actions">
-          <NavLink to="/contact" className="btn btn-accent">
+          <NavLink to="/contact" className="btn btn-accent" ref={primaryCtaRef}>
             Start a Project
           </NavLink>
-          <NavLink to="/work" className="btn btn-outline">
+          <NavLink to="/work" className="btn btn-outline" ref={secondaryCtaRef}>
             See Our Work
           </NavLink>
         </div>

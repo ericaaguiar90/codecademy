@@ -1,0 +1,13 @@
+.not-found-title {
+  font-size: var(--type-giant);
+  font-weight: 700;
+  margin-block: var(--space-sm) var(--space-md);
+  max-width: 20ch;
+}
+
+.not-found-subtitle {
+  max-width: 34rem;
+  color: var(--color-fg-muted);
+  font-size: var(--type-md);
+  margin-bottom: var(--space-lg);
+}

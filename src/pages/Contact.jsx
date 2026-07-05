@@ -34,6 +34,7 @@ export default function Contact() {
   const [values, setValues] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const fieldRefs = useRef({});
 
   const handleChange = (field) => (event) => {
@@ -56,7 +57,11 @@ export default function Contact() {
       return;
     }
 
-    setSubmitted(true);
+    setSubmitting(true);
+    window.setTimeout(() => {
+      setSubmitting(false);
+      setSubmitted(true);
+    }, 700);
   };
 
   if (submitted) {
@@ -185,8 +190,13 @@ export default function Contact() {
               )}
             </div>
 
-            <button type="submit" className="btn btn-accent">
-              Send Project Details
+            <button
+              type="submit"
+              className="btn btn-accent"
+              disabled={submitting}
+              aria-busy={submitting}
+            >
+              {submitting ? "Sending…" : "Send Project Details"}
             </button>
           </Reveal>
 
